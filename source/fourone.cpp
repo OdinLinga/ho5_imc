@@ -2,7 +2,7 @@
 #include <IMC/Base/ByteBuffer.hpp>
 #include <IMC/Base/Packet.hpp>
 // see https://github.com/butcherg/DatagramSocket
-#include <DatagramSocket.h>
+#include <Socket/DatagramSocket.h>
 #define LAUVXPLORE1 (30)
 
 using namespace IMC;
