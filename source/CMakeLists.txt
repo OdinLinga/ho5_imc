@@ -14,3 +14,4 @@ file(GLOB_RECURSE IMC_HEADERS "${PROJECT_SOURCE_DIR}/IMC/*.hpp")
 add_library(imc ${IMC_HEADERS} ${IMC_SOURCES})
 
 add_executable(Hello hello.cpp)
+add_executable(PlanSpecification fourone.cpp)
