@@ -3,7 +3,7 @@
 #include <IMC/Base/Packet.hpp>
 // see https://github.com/butcherg/DatagramSocket
 #include <Socket/DatagramSocket.h>
-#include <iostream>
+#include <iostream> //For printing
 #define LAUVXPLORE1 (30)
 
 using namespace IMC;
@@ -20,7 +20,12 @@ int main()
 
     Packet::serialize(&abort, (uint8_t *) buffer, size);    //serialize message
     DatagramSocket socket(6002, localhost, true, true);     //create socket
+
+
+
+
+    
     socket.sendTo(buffer, size, localhost);                 //send message to localhost:6002
-    std::cout << "Program Finished!" << std::endl;
+    std::cout << "Program Finished!" << std::endl;          //Just so i know the program runs.
     return 0;
 }
