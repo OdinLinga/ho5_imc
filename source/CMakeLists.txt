@@ -16,5 +16,5 @@ add_library(imc ${IMC_HEADERS} ${IMC_SOURCES})
 add_library(socket Socket/DatagramSocket.h Socket/DatagramSocket.cpp)
 
 add_executable(Hello hello.cpp)
-add_executable(PlanSpecification fourone.cpp)
+add_executable(PlanSpecification planspec.cpp)
 target_link_libraries(PlanSpecification imc socket)
