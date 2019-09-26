@@ -23,7 +23,16 @@ int main()
     DatagramSocket socket(6002, localhost, true, true);     //create socket
 
 
+    PlanSpecification ps;
+    ps.setTimeStamp(1.5628304294681385E9);
+    ps.setSource(16652);
+    ps.setSourceEntity(44);
+    ps.setDestination(30);
+    ps.setDestinationEntity(255);
+    ps.plan_id = "cmd-lauv-xplore-1";
+    ps.start_man_id = "1";
 
+    std::cout << ps.toString();
 
 
     socket.sendTo(buffer, size, localhost);                 //send message to localhost:6002
