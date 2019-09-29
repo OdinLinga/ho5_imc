@@ -38,6 +38,23 @@ int main()
 
     PlanManeuver pm;
     pm.maneuver_id = "1";
+    Loiter loiter;
+    loiter.timeout = 10000;
+    loiter.lat = 0.7188016469344056;
+    loiter.lon = -0.15194250254286037;
+    loiter.z = 3;
+    loiter.z_units = 1;
+    loiter.duration = 300;
+    loiter.speed = 1000;
+    loiter.speed_units = 1;
+    loiter.type = 1;
+    loiter.radius = 20;
+    loiter.length = 1;
+    loiter.bearing = 0;
+    loiter.direction = 1;
+    EntityParameter ep;
+    SetEntityParameters sep;
+    sep.name = "LBL";
 
     std::cout << ps.toString();
 
