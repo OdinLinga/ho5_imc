@@ -2,6 +2,10 @@
 #include <IMC/Base/ByteBuffer.hpp>
 #include <IMC/Base/Packet.hpp>
 #include <IMC/Spec/PlanSpecification.hpp>
+#include <IMC/Spec/PlanManeuver.hpp>
+#include <IMC/Spec/Loiter.hpp>
+#include <IMC/Spec/SetEntityParameters.hpp>
+#include <IMC/Spec/EntityParameter.hpp>
 // see https://github.com/butcherg/DatagramSocket
 #include <Socket/DatagramSocket.h>
 #include <iostream> //For printing
@@ -31,6 +35,9 @@ int main()
     ps.setDestinationEntity(255);
     ps.plan_id = "cmd-lauv-xplore-1";
     ps.start_man_id = "1";
+
+    PlanManeuver pm;
+    pm.maneuver_id = "1";
 
     std::cout << ps.toString();
 
