@@ -73,8 +73,7 @@ int main()
     MessageList<PlanManeuver> maneuvers;
     maneuvers.push_back(pm);
     ps.maneuvers = maneuvers;
-    std::cout << ps.toString();
-
+    ps.toJSON(std::cout);
 
     socket.sendTo(buffer, size, localhost);                 //send message to localhost:6002
     std::cout << "Program Finished!" << std::endl;          //Just so i know the program runs.
