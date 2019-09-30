@@ -6,6 +6,9 @@
 #include <IMC/Spec/Loiter.hpp>
 #include <IMC/Spec/SetEntityParameters.hpp>
 #include <IMC/Spec/EntityParameter.hpp>
+#include <IMC/Base/MessageList.hpp>
+#include <IMC/Base/InlineMessage.hpp>
+#include <IMC/Base/Message.hpp>
 // see https://github.com/butcherg/DatagramSocket
 #include <Socket/DatagramSocket.h>
 #include <iostream> //For printing
@@ -53,9 +56,23 @@ int main()
     loiter.bearing = 0;
     loiter.direction = 1;
     EntityParameter ep;
+    MessageList<EntityParameter> params;
     SetEntityParameters sep;
     sep.name = "LBL";
+    ep.name = "Active";
+    ep.value = "false";
+    params.push_back(ep);
+    sep.params = params;
+    InlineMessage<Maneuver> data;
+    data.set(loiter);
+    pm.data = data;
 
+    MessageList<Message> s_actions;
+    s_actions.push_back(sep);
+    pm.start_actions = s_actions;
+    MessageList<PlanManeuver> maneuvers;
+    maneuvers.push_back(pm);
+    ps.maneuvers = maneuvers;
     std::cout << ps.toString();
 
 
